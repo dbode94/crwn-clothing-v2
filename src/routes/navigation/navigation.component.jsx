@@ -35,9 +35,8 @@ const Navigation = () =>{
                     }
                     <CartIcon/>
                 </div>
-                {
-                    isCartOpen && <CartDropdown/> 
-                }
+                {/* All functional component are true */}
+                { isCartOpen && <CartDropdown/>} 
             </div>
             <Outlet/>
         </Fragment>
