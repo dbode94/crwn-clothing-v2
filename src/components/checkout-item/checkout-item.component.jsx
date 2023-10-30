@@ -8,11 +8,11 @@ const CheckoutItem = ({cartItem}) =>{
     
     const {clearItemFromCart, addItemToCart, removeItemFromCart} = useContext(CartContext);
 
+    //helper funtionc for code readablility
     const clearItemHandler = () => clearItemFromCart(cartItem);
-
     const addItemHandler = () => addItemToCart(cartItem);
-
     const removeItemHandler = () => removeItemFromCart(cartItem);
+
     return(
         <div className='checkout-item-container'>
             <div className='image-container'>
