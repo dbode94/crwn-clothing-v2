@@ -12,7 +12,7 @@ import {ReactComponent as CrwnLogo} from '../../assets/crown.svg'
 import { signOutUser } from "../../utils/firebase/firebase.utils.";
 
 
-import './navigation.styles.scss'
+import {NavigationContainer, LogoContainer, NavLinksContainer, NavLink} from './navigation.styles'
 
 
 
@@ -22,22 +22,22 @@ const Navigation = () =>{
 
     return(
         <Fragment>
-            <div className="navigation">
-                <Link className="logo-container" to='/'>
+            <NavigationContainer>
+                <LogoContainer to='/'>
                     <CrwnLogo className="logo"/>
-                </Link>
-                <div className="nav-links-container">
-                    <Link className="nav-link" to= '/shop'>
+                </LogoContainer>
+                <NavLinksContainer>
+                    <NavLink to= '/shop'>
                         SHOP
-                    </Link>
+                    </NavLink>
                     {
-                        currentUser? (<Link className="nav-link" onClick={signOutUser}>Sign Out</Link>) : (<Link className="nav-link" to= '/auth'> Sign In</Link>)
+                        currentUser? (<NavLink as='span' onClick={signOutUser}>Sign Out</NavLink>) : (<NavLink to='/auth'> Sign In</NavLink>)
                     }
                     <CartIcon/>
-                </div>
+                </NavLinksContainer>
                 {/* All functional component are true */}
                 { isCartOpen && <CartDropdown/>} 
-            </div>
+            </NavigationContainer>
             <Outlet/>
         </Fragment>
     )
