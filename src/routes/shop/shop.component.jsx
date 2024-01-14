@@ -19,7 +19,7 @@ const Shop = () =>{
     }
 
     getCategoriesMap();
-}, []);
+},[]);
 
   
   return(
