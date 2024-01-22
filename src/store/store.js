@@ -11,7 +11,7 @@ import { rootReducer } from "./root-reducer";
 const persistConfig = {
     key: 'root',
     storage: storage, //for most browsers the storage from redux-persist lib is the local storage
-    blacklist: ['user'] // since we get the user from a auth method from Firebase which persists after reloads, we might want to blacklist it
+    whitelist: ['cart'] // since we get the user from a auth method from Firebase which persists after reloads, we might want to blacklist it
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
